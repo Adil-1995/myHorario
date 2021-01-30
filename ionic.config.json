@@ -1,5 +1,7 @@
 {
   "name": "myHorario",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
