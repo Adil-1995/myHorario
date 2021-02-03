@@ -25,8 +25,11 @@ export class CopyService {
           
         })
         .catch((error) =>{
-        console.log("Erroro"+ error);
+        console.log("Fallo de copiar al"+ error);
+        console.log("copia"+ JSON.stringify(error));
       });
+      console.log("Copia terminado");
+      
       })
       .catch((err) => {
         console.log("La plataaforma no esta lista ");

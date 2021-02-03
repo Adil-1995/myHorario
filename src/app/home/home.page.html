@@ -1,11 +1,42 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      <ion-text color="danger" class="ion-text-center">
+        <h1>Horario Harnina</h1>
+      </ion-text>
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-<h1>Hello world</h1>
+
+  <ng-container>
+    <ion-list style="text-align:center">
+  <div>
+    <ion-button color="tertiary" (click)="copiar()">
+      <ion-icon slot="start" name="copy"></ion-icon>
+      Copy Data Base
+    </ion-button>
+  </div>
+
+  <ion-button color="primary" (click)="abrir()">
+    <ion-icon slot="start" name="open"></ion-icon>
+    Open Data Base
+  </ion-button>
+  <div>
+    <ion-button color="danger" (click)="getEstudios()">
+      <ion-icon slot="start" name="book"></ion-icon>
+      Show Estudios
+    </ion-button>
+  </div>
+</ion-list>
+</ng-container>
+  <ion-card color="success">
+      <ion-card-title class="ion-text-center">lista de Estdios</ion-card-title>
+    <ion-card-content *ngFor="let estudio of listaEstudios">
+     <ion-item button (click)="irGrupos(estudio.nombre)">{{estudio.nombre}}</ion-item>
+    </ion-card-content>
+  </ion-card>
+
+
 </ion-content>

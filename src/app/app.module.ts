@@ -1,9 +1,10 @@
+import { SQLite, SQLiteObject } from '@ionic-native/sqlite/ngx';
 import { SqliteDbCopy } from '@ionic-native/sqlite-db-copy/ngx';
 import { CopyService } from './share/copy.service';
 import { DatosService } from './share/datos.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouteReuseStrategy } from '@angular/router';
+import { ActivatedRoute, Router, RouteReuseStrategy } from '@angular/router';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
@@ -22,6 +23,7 @@ import { AppRoutingModule } from './app-routing.module';
     SplashScreen,
     CopyService,
     SqliteDbCopy,
+    SQLite,
     DatosService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],

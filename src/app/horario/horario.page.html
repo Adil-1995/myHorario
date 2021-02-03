@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="cabeceraPage">Horario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <div class="text-center">Horario de {{nombreCurso}}</div>
+  </ion-item>
+  <ion-button color="primary" (click)="mostrarHorarioClase()">Mostrar Horario</ion-button>
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let dia of cabezera">
+        <div>{{dia}}</div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="horario" *ngFor="let hora of horasNoRepetidas">
+      <ion-col class="horario">
+        <div>{{hora}}</div>
+      </ion-col>
+      <ion-col class="horario" *ngFor="let asig of obtenerAsignatura(hora) ">{{asig}}</ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

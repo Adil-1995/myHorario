@@ -1,0 +1,11 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <h1 class="ion-text-center">Grupos de {{grupoNombre}}</h1>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item *ngFor="let item of listaGrupos" >{{item.nombre}}</ion-item>
+</ion-content>
