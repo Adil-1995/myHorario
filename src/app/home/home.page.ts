@@ -33,17 +33,17 @@ export class HomePage implements OnInit {
 
   copiar() {
     this.copiaService.copiarDB();
-    alert("data base has been copied!!!!!!!");
+ 
   }
   abrir() {
     this.datosService.crearDB();
-    alert("data base is opening!!!!!!!");
+
   }
 
  async getHoras(){
     await this.datosService.getHoras();
     this.horasList=this.datosService.getHorasList();
-    alert("Hours has been copied!!!!!!!");
+   
   }
 
   async getEstudios(){

@@ -25,6 +25,7 @@ export class HorarioPage implements OnInit {
   ) {
     this.activatedRuta.queryParamMap.subscribe(() => {
       this.nombreCurso = this.route.getCurrentNavigation().extras.state.nombreCurso;
+      this.obtenerHorasClase();
     });
   }
 
@@ -41,6 +42,8 @@ export class HorarioPage implements OnInit {
       this.cabezera.add(obj.dia); //as dia
       this.horasNoRepetidas.add(obj.hora); // as hora
       this.asignatura.push(obj.nombreMateria); //as nombreMateria
+     // console.log(this.horasListClase);
+      
     });
     let array = Array.from(this.horasNoRepetidas); //save none repeated hours in Array
     do {
@@ -50,7 +53,7 @@ export class HorarioPage implements OnInit {
         }
       });
       array.shift(); //Removes the first element from an array and returns it
-    } while ((array.length = 0));
+    } while (array.length = 0);
   }
 
   obtenerAsignatura(hora: string): string[] {

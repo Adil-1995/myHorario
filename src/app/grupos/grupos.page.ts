@@ -1,8 +1,7 @@
 import { DatosService } from "./../share/datos.service";
 import { CopyService } from "./../share/copy.service";
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute, Router } from "@angular/router";
-import { getgroups } from "process";
+import { ActivatedRoute, NavigationExtras, Router } from "@angular/router";
 
 @Component({
   selector: "app-grupos",
@@ -13,19 +12,14 @@ export class GruposPage implements OnInit {
   grupoNombre: string;
   listaGrupos: any[] = [];
 
-  // constructor() {}
-  // ngOnInit(): void {
-  //   throw new Error('Method not implemented.');
-  // }
-
   constructor(
     private copiaService: CopyService,
     private datosService: DatosService,
-    private router: Router,
+    private route: Router,
     private myRuta: ActivatedRoute
   ) {
     this.myRuta.queryParamMap.subscribe(() => {
-      this.grupoNombre = this.router.getCurrentNavigation().extras.state.nombreCurso;
+      this.grupoNombre = this.route.getCurrentNavigation().extras.state.nombreCurso;
       this.getGrupos();
     });
   }
@@ -37,7 +31,14 @@ export class GruposPage implements OnInit {
     await this.datosService.obtenerGrupo(this.grupoNombre);
     this.listaGrupos = this.datosService.getGruposList();
     console.log(this.listaGrupos);
+  }
 
-    
+  navHorario(name: string) {
+    let extraNavegation: NavigationExtras = {
+      state: {
+        nombreCurso: name,
+      },
+    };
+    this.route.navigate(["horario"], extraNavegation);
   }
 }

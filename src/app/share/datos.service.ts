@@ -81,7 +81,7 @@ export class DatosService {
     and materiahoraclase.idHoraClase==horaclase.idHoraClase
     and materiahoraclase.idMateria==materia.idMateria
     group by horaClase.idHorasSemana, horaClase.idDiaClase, horaClase.idHoraClase`;
-    console.log(sql);
+    //console.log(sql);
     
     await this.executeSentencia(this.listaHoras,sql,[]);
   }

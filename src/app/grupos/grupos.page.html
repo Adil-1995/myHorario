@@ -7,5 +7,13 @@
 </ion-header>
 
 <ion-content>
+  <ion-card class="cabeceraPage">
+    <ion-card-title class="cabeceraPage">Grupos de {{grupoNombre}}</ion-card-title>
+    <ion-card-content class="contenidoCard" *ngFor="let grupo of listaGrupos">
+      <ion-item class="botonNav" button (click)="navHorario(grupo.nombre)">{{grupo.nombre}}</ion-item>
+    </ion-card-content>
+  </ion-card>
+<!-- 
   <ion-item *ngFor="let item of listaGrupos" >{{item.nombre}}</ion-item>
+  <ion-item class="botonNav" button (click)="navHorario()">{{item.name}}</ion-item> -->
 </ion-content>

@@ -1,16 +1,21 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title class="cabeceraPage">Horario</ion-title>
+    <ion-title>
+      <ion-text color="danger" class="ion-text-center">
+        <h1>Horario Harnina</h1>
+      </ion-text>
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content >
   <ion-item>
-    <div class="text-center">Horario de {{nombreCurso}}</div>
+    <h3  class="ion-text-center">Horario de : {{nombreCurso}}</h3>
+
   </ion-item>
-  <ion-button color="primary" (click)="mostrarHorarioClase()">Mostrar Horario</ion-button>
+  <ion-button color="danger" (click)="mostrarHorarioClase()" style="text-align:center">Mostrar Horario</ion-button>
   <ion-grid>
-    <ion-row>
+    <ion-row >
       <ion-col *ngFor="let dia of cabezera">
         <div>{{dia}}</div>
       </ion-col>
